@@ -24,6 +24,10 @@ Copy `.env.example` to `.env`, add your OpenAI API key to `OPENAI_API_KEY`, then
 
 The portfolio and chatbot are based on the provided resume details. The Parkinson's EEG project is linked to its GitHub repository and is described as educational research, not a clinical diagnostic tool.
 
+## RoleMatch — Private Resume Matcher
+
+The portfolio includes [RoleMatch](projects/resume-job-matcher/), a local-first Python app that compares recognized skills in a resume and job description. It supports TXT, MD, PDF, and DOCX, reports a transparent keyword-coverage estimate, and does not send documents to an external service or save them. The estimate is not an ATS score or hiring prediction. See the project README for local setup and tests.
+
 ## GitHub Pages deployment
 
 The included GitHub Actions workflow deploys the static portfolio to GitHub Pages whenever changes are pushed to `main`. Enable GitHub Pages in the repository settings and select **GitHub Actions** as the build and deployment source if it is not already enabled. Do not upload `.env` or your API key. The `.gitignore` excludes `.env` and `node_modules`.
