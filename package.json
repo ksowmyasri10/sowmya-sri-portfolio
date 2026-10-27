@@ -1,0 +1,12 @@
+{
+  "name": "sowmya-sri-portfolio",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Kambhampati Sowmya Sri's portfolio website with a grounded AI assistant",
+  "scripts": {
+    "start": "node server.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
