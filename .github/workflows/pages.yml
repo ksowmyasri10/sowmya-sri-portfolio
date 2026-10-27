@@ -32,6 +32,7 @@ jobs:
           mkdir -p _site/assets
           cp index.html _site/index.html
           cp assets/sowmya-profile.jpg _site/assets/sowmya-profile.jpg
+          cp assets/Kambhampati_Sowmya_Sri_ATS_Resume.pdf _site/assets/Kambhampati_Sowmya_Sri_ATS_Resume.pdf
       - name: Upload portfolio
         uses: actions/upload-pages-artifact@v3
         with:

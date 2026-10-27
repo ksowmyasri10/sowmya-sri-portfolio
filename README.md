@@ -26,7 +26,9 @@ The portfolio and chatbot are based on the provided resume details. The Parkinso
 
 ## RoleMatch — Private Resume Matcher
 
-The portfolio includes [RoleMatch](projects/resume-job-matcher/), a local-first Python app that compares recognized skills in a resume and job description. It supports TXT, MD, PDF, and DOCX, reports a transparent keyword-coverage estimate, and does not send documents to an external service or save them. The estimate is not an ATS score or hiring prediction. See the project README for local setup and tests.
+RoleMatch is published as a separate repository: [RoleMatch-Private-Resume-Matcher](https://github.com/ksowmyasri10/RoleMatch-Private-Resume-Matcher). Its local source folder is `projects/resume-job-matcher/`. The Python app compares recognized skills in a resume and job description, supports TXT, MD, PDF, and DOCX, reports a transparent keyword-coverage estimate, and does not send documents to an external service or save them. The estimate is not an ATS score or hiring prediction.
+
+The ATS resume PDF is available from the portfolio's **Download resume (PDF)** link.
 
 ## GitHub Pages deployment
 

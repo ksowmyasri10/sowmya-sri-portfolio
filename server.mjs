@@ -28,7 +28,7 @@ Listed skills: Java, C, C++, Python, HTML, CSS, MySQL. The portfolio owner also 
 AI/ML and data skills include machine learning, deep learning, Natural Language Processing (NLP), Generative AI, data preprocessing, feature engineering, exploratory data analysis, classification, model evaluation, EEG signal analysis, TensorFlow, Keras, scikit-learn, pandas, NumPy, matplotlib, and seaborn.
 
 Projects:
-- RoleMatch — Private Resume and Job Description Matcher: a local-only Python app that compares curated skill matches, missing skills, and additional skills with a transparent coverage estimate. Supports TXT, MD, PDF, and DOCX extraction; does not call an AI service or save uploaded documents. The estimate is not an ATS score or hiring prediction. Repository: https://github.com/ksowmyasri10/sowmya-sri-portfolio/tree/main/projects/resume-job-matcher.
+- RoleMatch — Private Resume and Job Description Matcher: a local-only Python app that compares curated skill matches, missing skills, and additional skills with a transparent coverage estimate. Supports TXT, MD, PDF, and DOCX extraction; does not call an AI service or save uploaded documents. The estimate is not an ATS score or hiring prediction. Repository: https://github.com/ksowmyasri10/RoleMatch-Private-Resume-Matcher.
 - Credit Card Default Prediction: Python project using preprocessing, feature engineering, exploratory data analysis, and Logistic Regression, Random Forest, and SVM models; reported accuracy 85%. Tools: scikit-learn, pandas, NumPy, matplotlib, seaborn.
 - EEG Emotion Recognition for Parkinson's Research: explores deep-learning-based emotion classification from EEG signals associated with Parkinson's disease and Delta, Theta, Alpha, and Beta frequency bands. Uses Python, TensorFlow, Keras, pandas, NumPy, and scikit-learn. Educational research project, not a clinical diagnostic tool. Repository: https://github.com/ksowmyasri10/Parkinson_disease_prediction.
 - E-Learning Management System: student, instructor, and administrator roles; courses, assignments, quizzes, and progress tracking. Tools: HTML, CSS, JavaScript, MySQL, Git.
@@ -170,6 +170,22 @@ const server = createServer(async (request, response) => {
     } catch (error) {
       console.error("Could not read the profile photo:", error.message);
       sendJson(response, 500, { error: "The profile photo could not be loaded." });
+    }
+    return;
+  }
+  if (pathname === "/assets/Kambhampati_Sowmya_Sri_ATS_Resume.pdf" && request.method === "GET") {
+    try {
+      const resume = await readFile(join(directory, "assets", "Kambhampati_Sowmya_Sri_ATS_Resume.pdf"));
+      response.writeHead(200, {
+        "Content-Type": "application/pdf",
+        "Content-Length": resume.length,
+        "Cache-Control": "public, max-age=3600",
+        "X-Content-Type-Options": "nosniff"
+      });
+      response.end(resume);
+    } catch (error) {
+      console.error("Could not read the resume PDF:", error.message);
+      sendJson(response, 500, { error: "The resume PDF could not be loaded." });
     }
     return;
   }
